@@ -1,0 +1,40 @@
+.breadcrumb {
+  font-size: 0.875em;
+  padding: 15px;
+  background: url(../images/breadcrumb_bg.gif) no-repeat center bottom;
+  @include screen('mobile') {
+    background: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+  }
+  &:before{
+    content: "";
+    width: 15px;
+    height: 14px;
+    display: inline-block;
+    background: url(../images/icon_home.png) no-repeat 0 center;
+    margin-right: 10px;
+  }
+  ul {
+    @include li-reset;
+    display: inline-block;
+    li {
+      display: inline-block;
+      margin: 0px .1em .1em 0px;
+      color: $primaryColor;
+      &:before {
+        content: ">";
+        display: inline-block;
+        margin: 0px 5px 0px 5px;
+        color: #666;
+      }
+      &:first-child:before {
+        content: "";
+        display: none;
+      }
+    }
+  }
+  a {
+    @include aSetting_nocolor;
+  }
+}

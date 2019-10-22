@@ -1,0 +1,111 @@
+body {
+  &.noscroll {
+    position: static !important;
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// 最外圍預設為100%
+.wrapper {
+  width: 100%;
+  margin: 0px auto;
+  background: url(../images/bg.gif) repeat 0 0;
+  @include screen('mobile') {
+    background: none;
+  }
+  @include screen('mobile') {
+    overflow:hidden;
+    overflow-y: auto;
+  }
+}
+
+// 整體共用container樣式，請注意首頁切版頁面的整齊
+.container {
+  padding: 0;
+  margin: 0 auto;
+  max-width: $container-max;
+}
+.main {
+  position: relative;
+  margin: 0 auto;
+  padding: 0; 
+  background: url(../images/floor.gif) no-repeat 0 bottom;
+  @include screen('mobile') {
+    padding-top: 55px;
+    background: none;
+  }
+  .pageTitle {
+    line-height: 1.25em;
+    font-size: 1.5rem;
+    color: $darkColor;
+  }
+  &.mp{
+    @include screen('mobile') {
+      background: url(../images/bg.gif) repeat 0 0; 
+      padding: 60px 15px 15px 15px;
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////
+// 為了與首頁區隔，請在內頁加上innerpage ClassName
+.innerpage {
+  padding-bottom: 65px;
+  @include screen('mobile') {
+    padding-bottom: 0;
+  }
+  &.small_size {
+    font-size: .938em;
+  }
+  &.large_size {
+    font-size: 1.125em;
+  }
+  >.container {
+    @include gutter(); //gutter 代表左右要留白
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    @include screen('mobile') {
+      border-radius: 0;
+    }
+    &:before{
+      content: ""; 
+      width: 94px;
+      height: 98px;
+      display: block;
+      background: url(../images/header_bg.png) no-repeat 0 0;
+      position: absolute;
+      top: -98px;
+      right: 150px;
+      @include screen('mobile') {
+        display: none;
+      }
+    }
+  }
+  .content{
+    clear: both;
+    padding: 40px 65px;
+    @include screen('mobile') {
+      padding: 0;
+    }
+    .pageTitle{
+      letter-spacing: 3px;
+      color: #414141;
+      margin-top: 0;
+      &:before{
+        content: "";
+        width: 55px;
+        height: 35px;
+        background: url(../images/title_bg.png) no-repeat 0 0;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: bottom;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+// 共通
+@import "_variable";					//變數
+@import "sass/_normalize";				//reset
+@import "sass/_mixin";					//客製MIXIN
+
+// 以下為404設定
+.wrapper{
+	max-width: 960px;
+	margin: 0px auto;
+}
+.error {
+	h1{
+		line-height: 1.45em;
+	}
+    width: 90%;
+    padding: 1em 360px 2em 2em;
+    min-height: 400px;
+    position: relative;
+    background: url(../images/404.png) no-repeat right bottom #F1F1F1;
+    margin: 3em auto 1em;
+    @include border-radius(6px);
+    @include box-sizing;
+    @include screen('mobile') {
+    	margin: 1em auto 1em;
+    }
+    h3 {
+        font-size: 1.25em;
+        line-height: 1.65em;
+        margin-bottom: 2em;
+        color:$aHover;
+        small {
+            display: block;
+            color:#666;
+            line-height:1.45em;
+        }
+    }
+
+    @include screen('mobile') {
+    	text-align: center;
+    	padding:1em 1em 350px;
+    	background: url(../images/404.png) no-repeat center bottom #F1F1F1;
+    }
+    .btn_grp{
+    	text-align: center;
+    	a{
+    		@include box-sizing;
+    		padding:.5em 1.2em;
+    		text-decoration: none;
+    		display:inline-block;
+    		@include gradient(#FFF,#DDD,vertical);
+    		margin: 0px .2em .5em;
+    		color:#222;
+    		font-size:1em;
+    		border:1px solid #CCC;
+    		@include border-radius(6px);
+    		box-shadow: 0px 2px 5px RGBA(0,0,0,.1);
+    		&:hover,&:focus{
+    			@include gradient(#FFF,#CCC,vertical);
+    			border:1px solid #BBB;
+    			box-shadow: 0px 2px 5px RGBA(0,0,0,.2);
+    		}
+    	}
+    }
+}
+
+
+
+
+
+
+
+

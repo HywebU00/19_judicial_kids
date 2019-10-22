@@ -1,0 +1,169 @@
+.fatfooter {
+  @include make-fatfooter($fatfooter-length, 100%);
+  @extend %clearfix;
+  // overflow: hidden;
+  padding:0;
+  margin: 0 auto;
+  background: $fatfooterBgColor;
+  position: relative;
+  .container {
+    overflow: hidden;
+    @include box-sizing;
+    @include gutter;
+  }
+  .btn-fatfooter {
+    font-size: .813em;
+    display: block;
+    color: #FFF;
+    border: none;
+    background: #000;
+    position: absolute;
+    margin: 0;
+    right: 50%;
+    top: 0;
+    margin-right: -26px;
+    margin-top: -10px;
+    z-index: 90;
+    text-indent: -9999px;
+    padding: .3em!important;
+    @include border-radius(0);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    &:before {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #FFF;
+      border-left: none;
+      border-bottom: none;
+      transform: rotate(-45deg);
+      left: 50%;
+      top: 10px;
+      margin-left: -6px;
+      transition: .3s ease-out;
+    }
+    &:hover,
+    &:focus {
+      background: $lightColor;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      box-shadow: none;
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+    &.close {
+      &:before {
+        transform: rotate(135deg) !important;
+        top: 5px;
+      }
+    }
+  }
+  nav {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    margin: 0;
+    padding:87px 1em 0 1em;
+    @include box-sizing;
+    @include screen('mobile') {
+      padding:1em;
+    }
+    &:before{
+      content: "";
+      width: 37px;
+      height: 37px;
+      position: absolute;
+      display: block;
+      left: 50%;
+      top:33px;
+      margin-left: -18px;
+      background: url(../images/basic/icon_logo.png) no-repeat center center;
+      @include screen('mobile') {
+        display: none;
+      }
+    }
+    >ul {
+      @include li-reset;
+      padding: 1.625em 0;
+      border-top: 1px solid #3d5665;
+      border-bottom: 1px solid #3d5665;
+      @include screen('mobile') {
+        width: 100%;
+        display: block;
+        margin: 0px auto;
+        border-top: 0;
+      }
+      li {
+        display: inline-block;
+        text-align: left;
+        vertical-align: top;
+        margin: 0 -5px 0 0;
+        @include box-sizing;
+        @include screen('mobile') {
+          display: block;
+          margin:0 0 .4em
+        }
+        a {
+          line-height: 1.5;
+          display: block;
+          font-weight: bold;
+          padding:0;
+          margin-bottom: 2em;
+          @include box-sizing;
+          color: #ecc249;
+          font-size: 0.938em;
+          @include screen('mobile') {
+            margin-bottom: .5em;
+          }
+          &:hover{
+            box-shadow: none;
+
+          }
+        }
+        ul {
+          @include li-reset;
+          @include screen('mobile') {
+            width: auto;
+          }
+          li {
+            display: block;
+            margin: 0;
+            border: none;
+            background: none;
+            width: 100%;
+            @include screen('mobile') {
+              width: auto;
+              display: inline-block;
+            }
+            a {
+              display: block;
+              @include aSetting_nocolor;
+              font-weight: normal;
+              text-align: left;
+              font-size: .875em;
+              line-height: 1.5em;
+              padding: .3em .2em .3em 0;
+              margin: 0 .5em 0 0;
+              background: none;
+              color: #dbdbdb;
+              transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+              &:hover,&:focus{
+                color: $secondaryColor;
+                box-shadow: 0 0px 0px 1px $secondaryColor inset;
+              }
+              @include screen('mobile') {
+                padding: .3em .5em .3em 0;
+              }
+            }
+          }
+          ul {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

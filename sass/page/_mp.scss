@@ -1,0 +1,138 @@
+/////////////////////////////////////////////////////////以下為demo範例///
+// 首頁區塊設定
+
+// 首頁輪播
+.mpSlider {
+  width: 681px;
+  height: 327px;
+  margin-bottom: 2em;
+  padding: 21px 22px 23px 21px;
+  background: url(../images/mpslider_bg.png) no-repeat 0 0;
+  float: left;
+  @include screen('mobile') {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    background: no-repeat;
+    padding: 0;
+    margin: 0 0 20px 0;
+    clear: both;
+  }
+  .slick-list{
+    border-radius: 10px;
+  }
+  .img-container {
+    @include aspect-ratio(638, 283);
+  }
+  .slick-prev {
+    left: 30px;
+    filter: invert(0);
+    opacity: 1;
+  }
+  .slick-next {
+    right: 30px;
+    filter: invert(0);
+    opacity: 1;
+  }
+}
+.left_link{
+  float: right;
+  width: 300px;
+  @include screen('mobile') {
+    clear: both;
+    float: none;
+    width: 100%;
+  }
+  ul{
+    @include li-reset;
+    li{
+      margin-bottom: 12px;
+      a{
+        padding: 1px 22px;
+        background: #00a194;
+        border: 4px solid #7dc8af;
+        display: block;
+        border-radius: 10px;
+        @include screen('mobile') {
+          text-align: center;
+        }
+        &:hover{
+          background: #009286;
+        }
+      }
+      &:first-child a{
+        background: #e54f1f;
+        border: 4px solid #ef9f75;
+        &:hover{
+          background: #e33700;
+        }
+      }
+      &:last-child a{
+        background: #8a451c;
+        border: 4px solid #c29a73;
+        &:hover{
+          background: #7f3204;
+        }
+      }
+      img{
+        width: 263px;
+        height: 72px;
+      }
+    }
+  }
+}
+.bottom_link{
+  overflow: hidden;
+  display: block;
+  clear: both;
+  margin-bottom: 30px;
+  ul{
+    @include li-reset;
+    li{
+      float: left;
+      margin-right: 35px;
+      @include screen('mobile') {
+        float: none;
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+      }
+      a{
+        width: 205px;
+        height: 300px;
+        display: block;
+        background: url(../images/bottomlink2.png) no-repeat 0 bottom;
+        @include screen('mobile') {
+          margin: 0 auto;
+        }
+        &:hover{
+          background: url(../images/bottomlink2_.png) no-repeat 0 bottom;
+        }
+      }
+      &:first-child a{
+        background: url(../images/bottomlink1.png) no-repeat 0 bottom;
+        &:hover{
+          background: url(../images/bottomlink1_.png) no-repeat 0 bottom;
+        }
+      }
+      &:last-child a{
+        background: url(../images/bottomlink3.png) no-repeat 0 bottom;
+        &:hover{
+          background: url(../images/bottomlink3_.png) no-repeat 0 bottom;
+        }
+      }
+    }
+  }
+}
+.bookcase{
+  width: 210px;
+  height: 210px;
+  display: block;
+  position: absolute;
+  background: url(../images/bookcase.png) no-repeat 0 0;
+  right: 46px;
+  bottom: 166px;
+  @include screen('mobile') {
+    display: none;
+  }
+}

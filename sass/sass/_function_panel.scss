@@ -1,0 +1,9 @@
+// function_panel setting
+.function {
+  display: inline-block;
+  margin-top: -2.65em;
+  float: right;
+  @include screen('mobile') {
+    margin-top: -3.8em;
+  }
+}

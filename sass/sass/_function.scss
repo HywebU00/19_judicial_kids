@@ -1,0 +1,153 @@
+$function_color:#888;
+//可自訂顏色，或是自帶既有變數，但請注意背景色與字的對比度
+//icon基本設定
+%function_before {
+  vertical-align: sub;
+  content: "";
+  width: 1.4em;
+  height: 1.4em;
+  margin-right: .4em;
+  display: inline-block;
+}
+div.function {
+  @include box-sizing;
+  @extend %clearfix;
+  ul {
+    @include li-reset;
+    li {
+      display: block;
+      float: left;
+      margin: 0 3px 3px 0;
+      button,
+      a {
+        font-size: .875em;
+        display: block;
+        padding: .2em 1em;
+        // background: $function_color;
+        // border-color: $function_color;
+        color: #5b5b5b;
+        border-radius: 4px;
+        &:hover,
+        &:focus {
+          background: #5b5b5b;
+          color: #fff;
+          // border-color: $linkColor;
+          &:before{
+            filter: invert(1);
+            opacity: 1;
+          }
+        }
+      }
+      &.icon_back {
+        a:before {
+          @extend %function_before;
+          background: url(../images/basic/icon_back.png) no-repeat center center;
+          background-size: cover;
+          opacity: .7;
+        }
+      }
+      // &.icon_print {
+      //   a:before {
+      //     @extend %function_before;
+      //     background: url(../images/basic/icon_print.svg) no-repeat center center;
+      //     background-size: cover;
+      //   }
+      // }
+      // &.icon_forward {
+      //   a:before {
+      //     @extend %function_before;
+      //     background: url(../images/basic/icon_forward.svg) no-repeat center center;
+      //     background-size: cover;
+      //   }
+      // }
+    }
+  }
+}
+// 放進function_panel樣式
+// .function_panel {
+//   .share {
+//     .shareButton {
+//       &:before {
+//         content: "";
+//         position: absolute;
+//         width: 50%;
+//         height: 50%;
+//         top: 25%;
+//         left: 25%;
+//         background: url(../images/basic/icon_share.png) no-repeat center center  !important;
+//         background-size: 20px !important;
+//       }
+//       text-indent:-9999px;
+//       &:hover,
+//       &:focus {
+//         &:before {
+//           filter: invert(100%);
+//         }
+//       }
+//     }
+//   }
+//   .function {
+//     height: 30px;
+//     margin: 0;
+//     ul {
+//       li {
+//         width: 30px;
+//         height: 30px;
+//         font-size: 1em;
+//         float: left;
+//         display: block;
+//         margin: 0 .2em;
+//         a {
+//           display: block;
+//           @include box-sizing;
+//           width: 30px;
+//           height: 30px;
+//           text-align: center;
+//           line-height: 30px;
+//           border-radius: 50%;
+//           background: #F1F1F1;
+//           text-indent: -9999px;
+//           position: relative;
+//           &:hover,
+//           &:focus {
+//             // background: $aHover;
+//             color: #FFF;
+//             box-shadow: none;
+//             &:before {
+//               filter: invert(100%);
+//             }
+//           }
+//           &:before {
+//             content: "";
+//             position: absolute;
+//             width: 60%;
+//             height: 60%;
+//             top: 20%;
+//             left: 20%;
+//           }
+//         }
+//         &.back {
+//           a:before {
+//             background: url(../images/basic/icon_back.png) no-repeat center center;
+//             background-size: 100%;
+//           }
+//         }
+//         &.print {
+//           a:before {
+//             background: url(../images/basic/icon_printer.png) no-repeat center center;
+//             background-size: 100%;
+//           }
+//           @include screen('mobile') {
+//             display: none;
+//           }
+//         }
+//         &.forward {
+//           a:before {
+//             background: url(../images/basic/icon_forward.png) no-repeat center center;
+//             background-size: 100%;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

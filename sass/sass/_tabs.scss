@@ -1,0 +1,135 @@
+.tabSet {
+  max-width: 100%;
+  margin: 1em auto;
+  overflow: hidden;
+  @extend %clearfix;
+  @include screen('mobile') {
+    width: auto;
+    height: auto !important;
+  }
+}
+.tabs {
+  position: relative;
+  &>.tabItem {
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-size:1em;
+    line-height: 1;
+    &>a {
+      display: block;
+      padding: 16px 0 14px;
+      text-align: center;
+      color: #5b5b5b;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 4px solid #a4a4a4;
+      letter-spacing: 1px;
+      transition: all .5s;
+      @include screen('mobile') {
+        background: #a4a4a4;
+        border-bottom: 1px solid #fff;
+        color: #fff;
+      }
+      @include text-overflow;
+      @include box-sizing;
+      &:hover,&:focus {
+        background: #a4a4a4;
+        color: #fff;
+      }
+    }
+    &.active>a {
+      // background-color: $primaryColor;
+      // color: #FFF;
+      border-bottom: 4px solid $primaryColor;
+      @include screen('mobile') {
+        background-color: $primaryColor;
+        border-bottom: 0;
+        color: #fff;
+      }
+      &:hover,&:focus {
+        background-color: $primaryColor;
+        color: #fff;
+      }
+    }
+  }
+}
+// 顯示content
+.active+.tabContent {
+  display: block;
+}
+.tabContent {
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  clear: both;
+  padding: 30px 20px;
+  display: none;
+  overflow: hidden;
+  @include screen('mobile') {
+    position: static;
+    padding: 20px 10px;
+  }
+  &.pl{
+    padding-left: 200px;
+    background: url(../images/left_pic.jpg) no-repeat 0 30px;
+    @include screen('mobile') {
+      padding: 20px 10px;
+      background: none;
+    }
+  }
+  &.pr{
+    padding-right: 185px;
+    background: url(../images/right_pic.jpg) no-repeat right 30px;
+    @include screen('mobile') {
+      padding: 20px 10px;
+      background: none;
+    }
+  }
+  &.pb{
+    padding-bottom: 185px;
+    background: url(../images/bottom_pic.jpg) no-repeat 0 bottom;
+    @include screen('mobile') {
+      padding: 20px 10px;
+      background: none;
+    }
+  }
+  .list{
+    @include li-reset;
+    width: 100%;
+    li{
+      width: 48%;
+      padding:0 1%;
+      float: left;
+      margin-bottom: 6px;
+      a{
+        display: block;
+        padding: .5em 1em;
+        background: #d8d8d8;
+        border-radius: 20px;
+        color: #414141;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        transition: all .5s;
+        &:before{
+          content: "";
+          width: 18px;
+          height: 18px;
+          display: inline-block;
+          background: url(../images/icon_flower.png) no-repeat 0 0;
+          margin-right: 6px;
+          vertical-align: middle;
+        }
+        &:hover{
+          color: #fff;
+          background: $primaryColor;
+        }
+      }
+    }
+  }
+  p{
+    margin-top: 0;
+  }
+}
