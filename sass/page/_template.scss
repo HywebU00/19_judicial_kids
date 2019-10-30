@@ -90,6 +90,7 @@ body {
   .content{
     clear: both;
     padding: 40px 65px;
+    font-size: 1.125em;
     @include screen('mobile') {
       padding: 0;
     }

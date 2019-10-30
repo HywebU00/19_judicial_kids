@@ -8,6 +8,7 @@ h1.title {
   margin-top: 1em;
   position: relative;
   padding-right: 166px;
+  min-height: 400px;
   @include screen('mobile') {
     padding-right: 0;
   }
