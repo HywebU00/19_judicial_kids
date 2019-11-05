@@ -9,7 +9,10 @@ body {
     padding: 0;
   }
 }
-
+:target {
+  padding-top: 65px;
+  margin-top: -65px;
+}
 // 最外圍預設為100%
 .wrapper {
   width: 100%;
