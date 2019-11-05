@@ -42,13 +42,13 @@
 // 頁面
 @import "page/_template";				//版型初始設定
 @import "page/_mp";						//首頁
-// @import "page/_lp";						//LP
+@import "page/_lp";						//LP
 // @import "page/_np";						//NP
 @import "page/_cp";						//CP
 // @import "page/_fp";						//Forward
 // @import "page/_qp";						//QP
 // @import "page/_sitemap";				//Sitemap
-// @import "page/_sp";						//SP
+@import "page/_sp";						//SP
 
 // 外掛
 @import "sass/_slick";					//slick

@@ -1,101 +1,47 @@
 .category {
-    @extend %clearfix;
-    text-align: left;
-    margin: 1em auto;
-    ul {
-        @include li-reset;
-        li {
-            margin: 0px 0 3px 0px;
-            // display: block;
-            float: left;
-        }
+  @extend %clearfix;
+  text-align: left;
+  margin: 1em auto;
+  ul {
+    @include li-reset;
+    li {
+      margin: 0px 0 3px 0px;
+      float: left;
+      width: 20%;
     }
-    &.col2{
-        ul li{
-            @include make-xs-column(12);
-            @include make-sm-column(6);
-            @include make-md-column(6);
-            @include make-lg-column(6);
-        }
+  }
+  a {
+    display: block;
+    padding: 16px 0 14px; 
+    text-align: center;
+    color: #5b5b5b;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 4px solid #a4a4a4;
+    letter-spacing: 1px;
+    transition: all .5s;
+    @include screen('mobile') {
+      background: #a4a4a4;
+      border-bottom: 1px solid #fff;
+      color: #fff;
     }
-    &.col3{
-        ul li{
-            @include make-xs-column(12);
-            @include make-sm-column(4);
-            @include make-md-column(4);
-            @include make-lg-column(4);
-        }
+    @include text-overflow;
+    @include box-sizing;
+    &:hover,&:focus {
+      background: #a4a4a4;
+      color: #fff;
     }
-    &.col4{
-        ul li{
-            @include make-xs-column(12);
-            @include make-sm-column(3);
-            @include make-md-column(3);
-            @include make-lg-column(3);
-        }
+    &.active{
+      border-bottom: 4px solid $primaryColor;
+      @include screen('mobile') {
+        background-color: $primaryColor;
+        border-bottom: 0;
+        color: #fff;
+      }
+      &:hover,&:focus {
+        background-color: $primaryColor;
+        color: #fff;
+      }
     }
-    &.col6{
-        ul li{
-            @include make-xs-column(12);
-            @include make-sm-column(2);
-            @include make-md-column(2);
-            @include make-lg-column(2);
-        }
-    }
-    &.col5{
-        ul li {
-            width: 20%;
-        }
-    }
-    a {
-        padding: .4em .75em;
-        display: block;
-        color: $primaryColor;
-        width: 100%;
-        @include box-sizing();
-        // &:before{
-        //     content: "";
-        //     width: 13px;
-        //     height: 14px;
-        //     display: inline-block;
-        //     background: url(../images/basic/icon_category.png) no-repeat center center;
-        //     margin-right: .5em;
-        // }
-        &:before{
-            content: "";
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 5px 0 5px 6px;
-            border-color: transparent transparent transparent #5978a4;
-            display: inline-block;
-            margin-right: 8px;
-        }
-        &:hover,
-        &:focus {
-            color: #FFF;
-            background: $primaryColor;
-            box-shadow: none;
-            &:before{
-                content: "";
-                // background: url(../images/basic/icon_category_.png) no-repeat center center;
-                border-color: transparent transparent transparent #fff;
-            }
-        }
-        &.active {
-            color: #FFF;
-            background: $primaryColor;
-        }
-        span {
-            font-size: .813em;
-            &:before {
-                content: "(";
-                display: inline-block;
-            }
-            &:after {
-                content: ")";
-                display: inline-block;
-            }
-        }
-    }
+  }
 }

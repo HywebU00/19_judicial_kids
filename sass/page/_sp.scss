@@ -1,0 +1,64 @@
+.sp{
+	&.pl{
+		padding-left: 200px;
+		background: url(../images/left_pic.jpg) no-repeat 0 30px;
+		@include screen('mobile') {
+			padding: 20px 10px;
+			background: none;
+		}
+	}
+	&.pr{
+		padding-right: 185px;
+		background: url(../images/right_pic.jpg) no-repeat right 30px;
+		@include screen('mobile') {
+			padding: 20px 10px;
+			background: none;
+		}
+	}
+	&.pb{
+		padding-bottom: 190px;
+		background: url(../images/bottom_pic.jpg) no-repeat center bottom;
+		@include screen('mobile') {
+			padding: 20px 10px;
+			background: none;
+		}
+	}
+	.list{
+		@include li-reset;
+		width: 100%;
+		overflow: hidden;
+		li{
+			width: 48%;
+			padding:0 1%;
+			float: left;
+			margin-bottom: 6px;
+			a{
+				display: block;
+				padding: .5em 1em;
+				background: #d8d8d8;
+				border-radius: 20px;
+				color: #414141;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				transition: all .5s;
+				&:before{
+					content: "";
+					width: 18px;
+					height: 18px;
+					display: inline-block;
+					background: url(../images/icon_flower.png) no-repeat 0 0;
+					margin-right: 6px;
+					vertical-align: middle;
+				}
+				&:hover{
+					color: #fff;
+					background: $primaryColor;
+				}
+			}
+		}
+	}
+	p{
+		margin-top: 0;
+	}
+}
