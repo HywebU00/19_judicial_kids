@@ -8,6 +8,9 @@
       margin: 0px 0 3px 0px;
       float: left;
       width: 20%;
+      @include screen('mobile') {
+        width: 100%;
+      }
     }
   }
   a {

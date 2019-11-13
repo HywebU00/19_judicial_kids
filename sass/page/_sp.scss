@@ -1,5 +1,8 @@
 .sp{
 	min-height: 270px;
+	@include screen('mobile') {
+		min-height:none;
+	}
 	&.pl{
 		padding-left: 200px;
 		background: url(../images/left_pic.jpg) no-repeat 0 30px;
@@ -11,9 +14,11 @@
 	&.pr{
 		padding-right: 185px;
 		background: url(../images/right_pic.jpg) no-repeat right 30px;
+		min-height: 300px;
 		@include screen('mobile') {
 			padding: 20px 10px;
 			background: none;
+			min-height:none;
 		}
 	}
 	&.pb{
