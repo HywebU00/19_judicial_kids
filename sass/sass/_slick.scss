@@ -182,11 +182,9 @@
   }
     // dots
     .slick-dots {
-      bottom: -30px !important;
-      @include screen('mobile') {
-        bottom: -40px !important;
-        padding: 0;
-      }
+      bottom: -50px !important;
+      padding: 0px;
+      left: 0;
       li {
         width: 10px;
         height: 10px;
