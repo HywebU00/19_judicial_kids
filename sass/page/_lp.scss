@@ -14,6 +14,7 @@
   }
   .list{
     @include li-reset;
+    margin: 0 -1%;
     width: 100%;
     overflow: hidden;
     li{

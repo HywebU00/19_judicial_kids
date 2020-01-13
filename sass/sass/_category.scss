@@ -48,3 +48,42 @@
     }
   }
 }
+.category2 {
+  @extend %clearfix;
+  text-align: left;
+  margin: 1em -4px;
+  ul {
+    @include li-reset;
+    li {
+      margin: 0px 4px 8px 4px;
+      float: left;
+      @include screen('mobile') {
+        width: 100%;
+      }
+    }
+  }
+  a {
+    display: block;
+    padding: 8px 15px; 
+    text-align: center;
+    color: #fff;
+    background: #8a451c;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all .5s;
+    @include screen('mobile') {
+    }
+    @include text-overflow;
+    @include box-sizing;
+    &:hover,&:focus {
+      background: $primaryColor;
+    }
+    &.active{
+      background: $primaryColor;
+      &:hover,&:focus {
+
+      }
+    }
+  }
+}

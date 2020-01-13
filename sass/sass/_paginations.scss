@@ -20,8 +20,12 @@
         list-style: none;
         @include box-sizing();
         a {
-          border-radius: 2px;
-          padding: 6px 10px;
+          border-radius: 50%;
+          // padding: 6px 10px;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
           font-weight: 700;
           display: block;
           white-space: nowrap;
@@ -32,7 +36,7 @@
           &:hover,
           &:focus {
             color: #fff !important;      
-            background: #5a77a0;
+            background: $primaryColor;
             border: $primaryColor solid 1px;
           }
         }
@@ -40,7 +44,7 @@
           a {
             color: #fff !important;
             background: $primaryColor;
-            border: darken(#5a77a0, 5) solid 1px;
+            border: darken($primaryColor, 5) solid 1px;
             
           }
         }
