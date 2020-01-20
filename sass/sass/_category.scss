@@ -52,10 +52,16 @@
   @extend %clearfix;
   text-align: left;
   margin: 1em -4px;
+  @include screen('mobile') {
+    margin: 1em 0;
+  }
   ul {
     @include li-reset;
     li {
       margin: 0px 4px 8px 4px;
+      @include screen('mobile') {
+        margin: 0 0 8px 0;
+      }
       float: left;
       @include screen('mobile') {
         width: 100%;

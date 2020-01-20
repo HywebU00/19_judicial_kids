@@ -25,7 +25,7 @@
 		padding-bottom: 190px;
 		background: url(../images/bottom_pic.jpg) no-repeat center bottom;
 		@include screen('mobile') {
-			padding: 20px 10px;
+			padding: 0;
 			background: none;
 		}
 	}
@@ -38,6 +38,11 @@
 			padding:0 1%;
 			float: left;
 			margin-bottom: 6px;
+			@include screen('mobile') {
+				width: 100%;
+				padding: 0;
+				margin-bottom: 10px;
+			}
 			a{
 				display: block;
 				padding: .5em 1em;

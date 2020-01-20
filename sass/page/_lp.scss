@@ -17,11 +17,19 @@
     margin: 0 -1%;
     width: 100%;
     overflow: hidden;
+    @include screen('mobile') {
+      margin: 0;
+    }
     li{
       width: 48%;
       padding:0 1%;
       float: left;
       margin-bottom: 6px;
+      @include screen('mobile') {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 10px;
+      }
       a{
         display: block;
         padding: .5em 1em;
