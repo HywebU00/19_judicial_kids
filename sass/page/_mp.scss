@@ -59,6 +59,9 @@
         &:hover{
           background: #009286;
         }
+        &:focus{
+          box-shadow: 0 0px 0px 2px #e33700 inset;
+        }
       }
       &:first-child a{
         background: #e54f1f;
@@ -66,12 +69,18 @@
         &:hover{
           background: #e33700;
         }
+        &:focus{
+          box-shadow: 0 0px 0px 2px $aHover inset;
+        }
       }
       &:last-child a{
         background: #8a451c;
         border: 4px solid #c29a73;
         &:hover{
           background: #7f3204;
+        }
+        &:focus{
+          box-shadow: 0 0px 0px 2px $aHover inset;
         }
       }
       img{
